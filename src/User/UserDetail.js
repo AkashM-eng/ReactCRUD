@@ -15,7 +15,7 @@ const UserDetail = () => {
     loadUser();
   }, []);
   const loadUser = async () => {
-    const res = await axios.get(`http://localhost:3001/users/${id}`);
+    const res = await axios.get(`http://localhost:4002/users/${id}`);
     setUser(res.data);
   };
   return (
@@ -31,6 +31,7 @@ const UserDetail = () => {
         <li className="list-group-item">Email: {user.email}</li>
         <li className="list-group-item">Phone: {user.phone}</li>
         <li className="list-group-item">Website: {user.website}</li>
+
       </ul>
     </div>
   );

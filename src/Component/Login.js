@@ -1,17 +1,17 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import axios from "axios";
-import { useHistory,Redirect } from "react-router-dom";
+import { useHistory, Redirect } from "react-router-dom";
 
 const Login = () => {
 
   let history = useHistory();
   const [login, setlogin] = useState({
-  
+
     username: "",
-    password:""
+    password: ""
   });
 
-  const {username,password } = login;
+  const { username, password } = login;
   const onInputChange = e => {
     setlogin({ ...login, [e.target.name]: e.target.value });
   };
@@ -19,9 +19,9 @@ const Login = () => {
   const onSubmit = async e => {
     e.preventDefault();
     // await axios.post("http://localhost:3001/login", login);
-    
+
     history.push('./user/add')
-       
+
   };
 
   return (
@@ -35,7 +35,7 @@ const Login = () => {
               type="text"
               class="form-control"
               id="username" name="username"
-              placeholder="username"  value={username}
+              placeholder="username" value={username}
               onChange={e => onInputChange(e)}
             />
           </div>
@@ -45,7 +45,7 @@ const Login = () => {
               type="password"
               class="form-control"
               id="Password" name="password"
-              placeholder="password"  value={password}
+              placeholder="password" value={password}
               onChange={e => onInputChange(e)}
             />
           </div>

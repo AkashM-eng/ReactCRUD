@@ -1,4 +1,4 @@
-  
+
 import React, { useState } from "react";
 import axios from 'axios'
 import { useHistory } from "react-router-dom";
@@ -8,7 +8,7 @@ const AddUser = () => {
   const [user, setUser] = useState({
     name: "",
     username: "",
-    email: "",  
+    email: "",
     phone: "",
     website: ""
   });
@@ -20,8 +20,8 @@ const AddUser = () => {
 
   const onSubmit = async e => {
     e.preventDefault();
-    await axios.post("http://localhost:3001/users", user);
-    history.push("/");
+    await axios.post("http://localhost:4002/users", user);
+    history.push("/home");
   };
   return (
     <div className="container">

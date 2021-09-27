@@ -1,42 +1,42 @@
-import React,{useState,useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
 
-    const [users,setUser] = useState([]);
-    useEffect(() => {
-        loadUsers();
-    },[]);
+  const [users, setUser] = useState([]);
+  useEffect(() => {
+    loadUsers();
+  }, []);
 
-    const loadUsers = async () => {
-        const result=await axios.get("http://localhost:3001/users");
-        setUser(result.data);
-     }
+  const loadUsers = async () => {
+    const result = await axios.get("http://localhost:4002/users");
+    console.log("kh", result)
+    setUser(result.data);
+  }
 
-     const deleteUser = async id =>{
-        await axios.delete(`http://localhost:3001/users/${id}`);
-        loadUsers();
-     }
+  const deleteUser = async id => {
+    await axios.delete(`http://localhost:4002/users/${id}`);
+    loadUsers();
+  }
 
-    return (
+  return (
     <div className="container">
-         <div className="py-4">
-             <h1>Home</h1>
-             <table class="table">
-  <thead class="thead-dark border shadow">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-      <th scope="col">Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    {
-        users.map((user,index)=>(
+      <div className="py-4">
+        <h1>Home</h1>
+        <table class="table">
+          <thead class="thead-dark border shadow">
             <tr>
+              <th scope="col">#</th>
+              <th scope="col">First</th>
+              <th scope="col">Last</th>
+              <th scope="col">Handle</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {users.map((user, index) => (
+              <tr>
                 <th scope="row">{index + 1}</th>
                 <td>{user.name}</td>
                 <td>{user.username}</td>
@@ -52,7 +52,7 @@ const Home = () => {
                   >
                     Edit
                   </Link>
-                  
+
                   <Link
                     class="btn btn-danger"
                     onClick={() => deleteUser(user.id)}
@@ -61,15 +61,15 @@ const Home = () => {
                   </Link>
                 </td>
               </tr>
-        ))
-    }
-  </tbody>
-</table>
+            ))
+            }
+          </tbody>
+        </table>
 
 
-         </div>
+      </div>
     </div>
-    )
+  )
 };
 
 export default Home;
