@@ -1,36 +1,20 @@
 {
   "users": [
     {
-      "name": "Akash",
-      "username": "akash.m@ibridgellc.com",
-      "email": "akash.m@ibridgellc.com",
-      "phone": "8095717667",
-      "website": "iBridge",
+      "name": "joel",
+      "username": "joel miranda",
+      "email": "joel@gmail.com",
+      "phone": "8595857585",
+      "website": "iBridge.com",
       "id": 1
     },
     {
-      "name": "Sachin ",
-      "username": "admin@dabur.com",
-      "email": "Akash@gmail.com",
-      "phone": "9874563123",
-      "website": "iBridge",
-      "id": 2
-    },
-    {
-      "name": "Akash",
-      "username": "admin@dabur.com",
+      "name": "Akash M",
+      "username": "akash.m@ibridgellc.com",
       "email": "akashmaliye35@gmail.com",
-      "phone": "8095717667",
-      "website": "iBridge.com",
-      "id": 3
-    },
-    {
-      "name": "Akash",
-      "username": "akashmaliye@gmail.com",
-      "email": "Akash@gmail.com",
-      "phone": "8978987789",
-      "website": "website.com",
-      "id": 4
+      "phone": "9874563123",
+      "website": "iBridge.in",
+      "id": 2
     }
   ]
 }

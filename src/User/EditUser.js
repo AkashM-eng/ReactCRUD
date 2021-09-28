@@ -25,7 +25,7 @@ const EditUser = () => {
   const onSubmit = async e => {
     e.preventDefault();
     await axios.put(`http://localhost:4002/users/${id}`, user);
-    history.push("/");
+    history.push("/home");
   };
 
   const loadUser = async () => {
